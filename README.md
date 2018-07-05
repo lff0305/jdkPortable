@@ -1,4 +1,4 @@
-A simple script to unzip the jdk installer without install it.
+A simple script to extract the jdk installer without install it.
 
 Usage:
 
