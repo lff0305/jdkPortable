@@ -29,4 +29,4 @@ del /f /s /q LICENSE
 del /f /s /q README.html
 del /f /s /q release
 
-
+echo 'Done. Please set/update JDK_HOME and PATH variables.'
