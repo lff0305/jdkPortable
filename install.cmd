@@ -1,19 +1,23 @@
 @ echo off
 
-echo 'Extracting .exe file...'
 set found="0"
 if exist jdk-8u181-windows-x64.exe (
 	set found="1"
-	echo found jdk-8u171-windows-x64.exe
+	echo found jdk-8u181-windows-x64.exe
+	echo 'Extracting jdk-8u181-windows-x64.exe...'
 	7z x jdk-8u181-windows-x64.exe
 )
 if exist jdk-8u171-windows-x64.exe (
 	set found="1"
 	echo found jdk-8u171-windows-x64.exe
+	echo 'Extracting jdk-8u171-windows-x64.exe...'
 	7z x jdk-8u171-windows-x64.exe
 )
 if %found% == "0" (
     echo JDK Installer not found. Exit.
+    echo Supported installers:
+    echo    jdk-8u181-windows-x64.exe
+    echo    jdk-8u171-windows-x64.exe
     goto :EXT
 )
 echo 'Extracting tools.zip from CAB...'
@@ -45,7 +49,7 @@ del /f /s /q LICENSE
 del /f /s /q README.html
 del /f /s /q release
 
-echo 'Done. Please set/update JDK_HOME and PATH variables.'
+echo 'Done. Please set/update JDK_HOME and add java.exe to PATH variables.'
 
 :EXT
 
